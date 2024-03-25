@@ -1,0 +1,158 @@
+.cover-wrap {
+    /* background-color: cadetblue; */
+    /* background-image: url(../assets/cover.svg); */
+    /* background-size: contain; */
+    height: 30rem;
+    position: relative;
+
+    img {
+        height: 90%;
+        width: 70%;
+        filter: hue-rotate(195deg) sepia(0.6) ;
+        /* border-image: fill 0 linear-gradient(to left, #191919, #19191959); */
+        /* background-color: #90909048; */
+    }
+
+    .slogan1 {
+        position: absolute;
+        top: 20%;
+        right: 20%;
+        font-size: 4rem;
+        font-family: inter;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        background-color: #1919198a;
+        padding: 2rem;
+    }
+
+    .slogan2 {
+        font-family: istok;
+        margin-top: 1rem;
+        font-size: 2rem;
+        /* background: yellow; */
+        color: yellow;
+        border-radius: 4rem;
+        padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+        translate: -1rem;
+        font-weight: 100;
+        border: solid yellow 5px;
+    }
+}
+
+.featured-vehicles-wrap {
+    /* display: flex; */
+    /* justify-content: space-around; */
+    position: relative;
+    height: auto;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+    background: yellow; 
+    background-image: linear-gradient(135deg, #ffff00 15%, #ffdd00 90%);
+    display: flex;
+    color: black;
+    align-items: center;
+}
+
+.feature {
+    font-family: inter;
+    font-weight: 700;
+    width: 30%;
+    margin-left: 15%;
+}
+
+.fv-n {
+    font-family: inter;
+    font-weight: 900;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+
+}
+
+.v-link {
+    /* padding: 1rem; */
+    margin-left: 0.2rem;
+    a {
+        border: solid black 3px;
+        padding: 0.7rem;
+        border-radius: 20px;
+        color: black;
+        /* background-color: black; */
+        transition: 0.2s ease-in-out;
+    }
+}
+
+.v-link a:hover {
+    color: yellow;
+    background-color: #191919;
+}
+
+.wrap {
+    top: 2rem;
+    width: 65%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+}
+
+.featured-vehicles {
+    margin: 0rem 0rem 2rem 5rem;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    width: max-content;
+    padding: 1rem 2rem 1rem 2rem;
+    border: solid black 1px;
+    background-color: #191919;
+    border-radius: 1rem;
+    display: flex;
+    transition: 0.2s ease-in-out;
+
+    /* align-items: center; */
+    .details {
+        margin-left: 0.7rem;
+    }
+
+    .v-img img {
+        width: 7rem;
+        background-color: #23232338;
+        border-radius: 1rem;
+        aspect-ratio: 3/2;
+        object-fit: contain;
+    }
+
+    .v-name {
+        font-family: 'Trebuchet MS';
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: #ffdd00;
+    }
+    
+    .v-price {
+        color: #ffdd00;
+        margin-top: 5px;
+        font-family: 'Trebuchet MS';
+    }
+}
+
+.featured-vehicles:hover {
+    animation: 0.3s bounce;
+    box-shadow: rgba(14, 30, 37, 0.681) 0px 2px 4px 0px, rgba(14, 30, 37, 0.63) 0px 2px 16px 0px;
+}
+
+@keyframes bounce {
+    0% {
+        translate: 0 0;
+    }
+
+    50% {
+        translate: 0 -10px;
+    }
+}
+
+@font-face {
+    font-family: inter;
+    src: url(../assets/Inter-VariableFont_slnt\,wght.ttf);
+}
+
+@font-face {
+    font-family: istok;
+    src: url(../assets/IstokWeb-Regular.ttf);
+}

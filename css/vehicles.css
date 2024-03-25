@@ -1,0 +1,68 @@
+.map-wrap{
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: 2rem;
+    img{
+        width: 50%;
+    }
+    .mark,.you{
+        width: 50px;
+        height: 50px;
+        background-color: white;
+        padding: 10px;
+        border-radius: 100%;
+        border: solid 3px black;
+        scale: 0.5;
+        position: absolute;   
+    }
+    .you{
+        display: flex;
+        border: solid 5px blue;
+        color: black;
+        text-align: center;
+        font-size: larger;
+        font-weight: bolder;
+        align-items: center;
+    }
+    .map{
+        border-radius: 30px;
+    }
+}
+.discription{
+    display: flex;
+    justify-content: center;
+}
+.discription-group{
+    padding: 1.5rem;
+    margin: 2rem;
+    width: 200px;
+    border: solid yellow 3px;
+    border-radius: 15px;
+    font-family: istok;
+    legend{
+        font-family: inter;
+        font-size: 1.5rem;
+        font-weight: bolder;
+    }
+}
+.scanner-link{
+    position: sticky;
+    /* left: 200vh;
+    top: 100vh; */
+    
+    padding: 10px;
+    background-color: yellow;
+    border-radius: 10px;
+    width: fit-content;
+    height: fit-content;
+    .scanner-wrap{
+        width: 50px;
+        height: 50px;
+        background-image: url(../assets/qr_code.png);
+        background-size: cover;
+        position: relative;
+        
+    }
+}

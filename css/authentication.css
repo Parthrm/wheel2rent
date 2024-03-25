@@ -1,0 +1,110 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: black;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.login-container {
+    width: 350px;
+    padding: 2.5rem 1.5rem 2.5rem 1.5rem;
+    border-radius: 10px;
+    background-image: linear-gradient(to bottom right, #ffdd00, rgb(255, 196, 0));
+}
+
+.greeting {
+    font-family: 'Trebuchet MS';
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.heading {
+    text-align: center;
+    font-family: inter;
+    font-weight: 900;
+    font-size: 1.7rem;
+}
+
+.login-container form {
+    margin: 20px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+
+    input {
+        height: 1.5rem;
+        font-size: 1.5rem;
+        width: 100%;
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        transition: 0.3s ease-in-out;
+        border: solid black 3px;
+    }
+
+    label img {
+        height: 3rem;
+        padding: 0.5rem;
+    }
+}
+
+.form-group input:hover {
+    background-color: #2a2929;
+    color: white;
+}
+
+.links-wrap {
+    display: flex;
+    justify-content: space-between;
+    margin: 12px 0 12px 0;
+
+    .link {
+        font-family: istok;
+        font-size: small;
+        padding: 5px;
+    }
+}
+
+.link:hover {
+    background-color: #2a29295a;
+    color: white;
+    border-radius: 8px;
+}
+
+.form-submit {
+    display: flex;
+    justify-content: center;
+
+    input {
+        background-color: #191919;
+        color: white;
+        width: 80%;
+        font-size: 1.5rem;
+        padding: 10px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bolder;
+        margin-top: 10px;
+    }
+}
+
+@font-face {
+    font-family: inter;
+    src: url(../assets/Inter-VariableFont_slnt\,wght.ttf);
+}
+
+@font-face {
+    font-family: istok;
+    src: url(../assets/IstokWeb-Regular.ttf);
+}
