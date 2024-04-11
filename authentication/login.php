@@ -6,7 +6,6 @@ $showError = false;
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     include '../req/dbconnect.php';
     $username = $_POST["username"];
-    
     $password = $_POST["password"];
     
     $exists=false;
@@ -14,10 +13,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $result = mysqli_query($conn, $sql);
     $row=mysqli_num_rows($result);
     if($row==1){
-        print("<script>alert('Login Successful');</script");
+
+        $result = $result->fetch_assoc();
+
+        echo "<script>alert('Login Successful');</script>";
         $exists=true;
-        header("location: ../index.php"); 
         
+        session_start();
+        $_SESSION['userid'] = $result['userid'];
+        $_SESSION['username'] = $result['username'];
+        $_SESSION['usertype'] = $result['type'];
+
+
+        header("location: ../index.php");
     }
     else{
         print("<script>alert('Login Failed');</script");

@@ -8,20 +8,9 @@
         <link rel="stylesheet" href="css/index.css">
     </head>
     <body>
-        <!-- header -->
-        <header>
-            <div class="logo"></div>
-            <div class="header-links-wrap">
-                <div class="header-links">
-                    <a href="vehicles.php">Find Ride</a>
-                    <a href="support.html">Support</a>
-                    <a href="#footer">Contact Us</a>
-                </div>
-                <div class="user">
-                    <a href="authentication/login.php" style="color: black;" >U</a>
-                </div>
-            </div>
-        </header>
+        <?php
+            require("req/header.php");
+        ?>
 
         <!-- cover -->
         <div class="cover-wrap">

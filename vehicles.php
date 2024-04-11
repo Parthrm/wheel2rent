@@ -7,33 +7,14 @@
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/vehicles.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
 </head>
 <body>
-    <!-- header -->
-    <header>
-        <div class="logo"></div>
-        <div class="header-links-wrap">
-            <div class="header-links">
-                <a href="ride.html">Find Ride</a>
-                <a href="#support">Support</a>
-                <a href="#footer">Contact Us</a>
-            </div>
-            <div class="user">
-                <a href="authentication/login.html" style="color: black;" >U</a>
-            </div>
-        </div>
-    </header>
+    <?php require("req/header.php")?>
 
     <!-- map show -->
     <div class="map-wrap" >
-        <!-- <img src="assets/map.png" alt="" class="map">
-        <img src="assets/bike.png" alt="" class="mark" style="top: 0;left: 500px;">
-        <img src="assets/bike.png" alt="" class="mark" style="top: 30px;left: 450px;">
-        <img src="assets/bike.png" alt="" class="mark" style="top: 200px;left: 670px;">
-        <img src="assets/bike.png" alt="" class="mark" style="top: 210px;left: 670px;">
-        <img src="assets/bike.png" alt="" class="mark" style="top: 150px;left: 680px;">
-        <div class="you" style="top: 120px;left: 700px;">YOU</div> -->
         <div id="map" style="height: 50vh; width:  100vh; border-radius: 5vh;"></div>
         
     </div>
@@ -60,31 +41,62 @@
 </html>
 
 
-
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-
-
 <script>
-    var map = L.map('map').setView([51.505, -0.09], 13);
-    var vehiclelist=[[51.510, -0.09711],[51.515, -1.09822],[51.520, -0.09112]]
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
+//     var map = L.map('map').setView([51.505, -0.09], 13);
+//     var vehiclelist=[[51.510, -0.09711],[51.515, -1.09822],[51.520, -0.09112]]
+// L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+// }).addTo(map);
 
 
 
-for (item in vehiclelist){
-    L.marker(vehiclelist[item]).addTo(map)
-    .bindPopup(`${item}  location`)
-    .openPopup();
+// for (item in vehiclelist){
+//     L.marker(vehiclelist[item]).addTo(map)
+//     .bindPopup(`${item}  location`)
+//     .openPopup();
 
-    console.log(item)
-}
-L.marker([51.505, -0.09]).addTo(map)
-    .bindPopup('Your location')
-    .openPopup();
+//     console.log(item)
+// }
+// L.marker([51.505, -0.09]).addTo(map)
+//     .bindPopup('Your location')
+//     .openPopup();
 
-map.setView([51.505, -0.09], 13);
+// map.setView([51.505, -0.09], 13);
+
+    var map = L.map('map', {center: [51.505, -0.09],zoom: 13});
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);
+    navigator.geolocation.watchPosition(sucess,error);
+
+    let marker,circle,zoomed;
+
+    function sucess(pos){
+        const lat = pos.coords.latitude;
+        const lng = pos.coords.longitude;
+        const accuracy = pos.coords.accuracy;
+
+        if(marker){
+            map.removeLayer(marker);
+            map.removeLayer(circle);
+        }
+        
+        marker = L.marker([lat,lng]).addTo(map)
+        circle = L.circle([lat,lng],{radius:accuracy}).addTo(map);
+
+        if(!zoomed){
+            zoomed = map.fitBounds(circle.getBounds());
+        }
+        map.setView([lat,lng]);
+    }
+
+    function error(err){
+        if(err.code===1){
+            alert("Please allow geolocation access");
+        }
+        else{
+            alert("Cannot get user location");
+        }
+    }
+
 </script>
 
-
+<!-- oskm ipoo hthn jdtp -->

@@ -4,8 +4,8 @@ $username = "root";
 $password = "";
 $database = "wheel2rent";
 
-$conn = mysqli_connect($server, $username, $password, $database);
-if (!$conn){
+$con = mysqli_connect($server, $username, $password, $database);
+if (!$con){
 //     echo "success";
 // }
 // else{

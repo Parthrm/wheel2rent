@@ -1,0 +1,5 @@
+firstname = wheel2rent
+birthday = 1 Jan 2000
+gender = male
+gmail = wheel2rent.project@gmail.com
+password = wheel2rentproject@12345
