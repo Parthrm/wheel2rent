@@ -8,7 +8,13 @@
     <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
-    <?php require("../req/header.php");    ?>
+    <?php 
+        if(isset($_SESSION))
+        {
+            
+        }
+        require("../req/header.php");    
+    ?>
 
     <div class="vehicles-container">
         <?php
@@ -16,7 +22,6 @@
             $sql = "SELECT * FROM vehicle";
             $result = $con->query($sql);
 
-            if()
 
         ?>
     </div>
